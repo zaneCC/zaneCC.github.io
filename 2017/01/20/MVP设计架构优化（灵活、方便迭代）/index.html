@@ -3,14 +3,49 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>MVP设计架构优化（灵活、方便迭代） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="本架构是通过使用 RxJava + RxAndroid +Retrofit2 + Butterknife搭建的。
+##写作目的随着项目逐渐壮大，必须有一个完善的框架作为一个支撑，不然难以维护。针对目前流行的框架，如：MVC,MVP,MVVM，我选择了  MVP 作为 Android APP 整体架构。
+下图为 MVP 架构图：
+
+怕我没说清楚，再具体一点：
+
+一开始，我也只是使用简单的 MVP 模">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVP设计架构优化（灵活、方便迭代）">
+<meta property="og:url" content="http://yoursite.com/2017/01/20/MVP设计架构优化（灵活、方便迭代）/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本架构是通过使用 RxJava + RxAndroid +Retrofit2 + Butterknife搭建的。
+##写作目的随着项目逐渐壮大，必须有一个完善的框架作为一个支撑，不然难以维护。针对目前流行的框架，如：MVC,MVP,MVVM，我选择了  MVP 作为 Android APP 整体架构。
+下图为 MVP 架构图：
+
+怕我没说清楚，再具体一点：
+
+一开始，我也只是使用简单的 MVP 模">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-272777694553600a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-eff97e0efa6b1978.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-526c9f5ad85e17a2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-99fca48efe34cdb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-b295f0a869b0fe4c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-3be0d1b5d751b13e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-0c6786c214af22c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-f760898b090cd05d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-7e55d74bd71cbbed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-53655af8d35b35a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-b298aa6a1f18c1fe.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1677180-2f4d89b0e6bf1529.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-01-20T01:57:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="MVP设计架构优化（灵活、方便迭代）">
+<meta name="twitter:description" content="本架构是通过使用 RxJava + RxAndroid +Retrofit2 + Butterknife搭建的。
+##写作目的随着项目逐渐壮大，必须有一个完善的框架作为一个支撑，不然难以维护。针对目前流行的框架，如：MVC,MVP,MVVM，我选择了  MVP 作为 Android APP 整体架构。
+下图为 MVP 架构图：
+
+怕我没说清楚，再具体一点：
+
+一开始，我也只是使用简单的 MVP 模">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1677180-272777694553600a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,54 +94,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/06/hello-world/" class="article-date">
-  <time datetime="2019-01-06T04:48:12.628Z" itemprop="datePublished">2019-01-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/06/hello-world/" data-id="cjqkf33pp0000rk2cz10bofc1" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="android-MVP设计架构优化（灵活、方便迭代）" class="article article-type-android" itemscope itemprop="blogPost">
+        <section id="main"><article id="android-MVP设计架构优化（灵活、方便迭代）" class="article article-type-android" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/20/MVP设计架构优化（灵活、方便迭代）/" class="article-date">
   <time datetime="2017-01-20T01:57:09.000Z" itemprop="datePublished">2017-01-20</time>
@@ -119,8 +107,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/20/MVP设计架构优化（灵活、方便迭代）/">MVP设计架构优化（灵活、方便迭代）</a>
+    <h1 class="article-title" itemprop="name">
+      MVP设计架构优化（灵活、方便迭代）
     </h1>
   
 
@@ -185,10 +173,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/06/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
+</article>
 
 </section>
         
